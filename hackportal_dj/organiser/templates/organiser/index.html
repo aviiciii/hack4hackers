@@ -1,12 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Organiser
+{% extends 'organiser/layout.html' %}
+
+
+{% block body %}
     
-</body>
-</html>
+
+    <div class="container">
+        <h1>Welcome back, {{username}}</h1>
+        <br> <br>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Summary</h2>
+                <ul>
+
+                    <li>No. of Hackers: {{hacker_count}}</li>
+                    <li>No. of Organisers: {{organiser_count}}</li>
+                    <li>No. of Unanswered Questions: {{unanswered_count}}</li>
+                    <li>No. of Submissions: {{submission_count}}</li>
+                    
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+
+{% endblock body %}
