@@ -2,6 +2,7 @@ from django.db import models
 
 # Create 
 class Hacker(models.Model):
+    team_name = models.CharField(max_length=100)
     lead_name = models.CharField(max_length=100)
     lead_email = models.EmailField()
     member1_name = models.CharField(max_length=100)
@@ -15,6 +16,7 @@ class Hacker(models.Model):
 class Organizer(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
+    password = models.CharField(max_length=100)
     
     # Add other fields as needed, such as organization, role, etc.
 
