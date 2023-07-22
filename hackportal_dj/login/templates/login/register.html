@@ -10,31 +10,23 @@
     <div class="form_spacing">
     <h2>Register</h2>
     </div>
-    <form >
+    <form action="{% url 'o_sponsor_details' %}" method="post" class="hackathon_details">
         {% csrf_token %}
         <br>
         <div class="form-group">
-            <input autofocus class="form-control" type="text" name="username" placeholder="Team name">
+            <input autofocus class="form-control" type="text" name="team_name" placeholder="Team name">
         </div>
         <br>
         <div class="form-group">
-            <input class="form-control" type="text" name="name" placeholder="Lead name">
+            <input class="form-control" type="text" name="name1" placeholder="Lead name">
         </div>
         <br>
         <div class="form-group">
-            <input class="form-control" type="text" name="name" placeholder="Member 1 name">
+            <input class="form-control" type="text" name="name2" placeholder="Member 1 name">
         </div>
         <br>
         <div class="form-group">
-            <input class="form-control" type="text" name="name" placeholder="Member 2 name">
-        </div>
-        <br>
-        <div class="form-group">
-            <input class="form-control" type="text" name="name" placeholder="Member 3 name">
-        </div>
-        <br>
-        <div class="form-group">
-            <input class="form-control" type="text" name="name" placeholder="Member 4 name">
+            <input class="form-control" type="text" name="name3" placeholder="Member 2 name">
         </div>
         <br>
         <div class="form-group">
