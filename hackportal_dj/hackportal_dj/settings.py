@@ -67,12 +67,7 @@ WSGI_APPLICATION = "hackportal_dj.wsgi.application"
 # Database
 
 
-DATABASES = {
-    "default": dj_database_url.config(
-        default=os.environ["DATABASE_URL"], engine="django_cockroachdb"
-    )
-}
-
+DATABASES = {'default': dj_database_url.config(default="postgresql://aviiciii:rNWXxQJk7QRNjQttYjro0g@tame-elf-5476.8nk.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full")}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
