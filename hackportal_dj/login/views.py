@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 from .models import Hacker, Organiser
 
 # Create your views here.
-def register(request):
+def register_view(request):
         if request.method == "POST":
             username = request.POST["team_name"]
             email = request.POST["email"]
@@ -40,7 +40,7 @@ def register(request):
 def land(request):
     return render(request, 'login/land.html')
 
-def login(request):
+def login_view(request):
     if request.method == "POST":
 
         # Attempt to sign user in
@@ -51,7 +51,12 @@ def login(request):
         # Check if authentication successful
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("index"))
+            # check if user is superuser
+            
+            if user.is_superuser:
+                return redirect('o_index')
+            else:
+                return redirect('h_index')
         else:
             messages.error(request, 'Invalid username and/or password.')
             return redirect('login')
