@@ -10,7 +10,7 @@ class Hacker(models.Model):
    
     
     def __str__(self):
-        return self.name
+        return self.team_name
     
 
 class Organiser(models.Model):

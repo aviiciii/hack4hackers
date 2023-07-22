@@ -7,6 +7,7 @@ from django.urls import reverse
 from django.db import IntegrityError
 #import user
 from django.contrib.auth.models import User
+from .models import Hacker, Organiser
 
 # Create your views here.
 def register(request):
@@ -14,16 +15,23 @@ def register(request):
             username = request.POST["team_name"]
             email = request.POST["email"]
             password = request.POST["password"]
-            
-    
+            name1 = request.POST["name1"]
+            name2 = request.POST["name2"]
+            name3 = request.POST["name3"]
             try:
                 user = User.objects.create_user(username, email, password)
                 user.save()
+
+                hacker = Hacker(team_name=username, lead_name=name1, lead_email=email, member1_name=name2, member2_name=name3)
+                hacker.save()
+            
+
+
             except IntegrityError:
                 messages.error(request, 'Team name already taken.')
                 return redirect('register')
-            login(request, user)
-            return HttpResponseRedirect(reverse("index"))
+            messages.success(request, 'Team registered successfully!')
+            return redirect('land')
         else:
             return render(request, "login/register.html")
         

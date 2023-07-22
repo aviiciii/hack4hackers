@@ -10,7 +10,7 @@
     <div class="form_spacing">
     <h2>Register</h2>
     </div>
-    <form action="{% url 'o_sponsor_details' %}" method="post" class="hackathon_details">
+    <form action="{% url 'register' %}" method="post" class="hackathon_details">
         {% csrf_token %}
         <br>
         <div class="form-group">
@@ -33,6 +33,10 @@
             <input class="form-control" type="text" name="email" placeholder="Lead's email">
         </div>
         <br>
+
+        <div class="form-group">
+            <input class="form-control" type="text" name="password" placeholder="Password">
+        </div>
         
         <input class="btn btn-primary" type="submit" value="Register">
     </form>
