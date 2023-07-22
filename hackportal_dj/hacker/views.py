@@ -7,8 +7,7 @@ from .models import Hackathon
 def index(request):
     return render(request, 'hacker/index.html')
 
-def hackathon_details(request):
-    return render(request, 'hacker/hackathon_details.html')
+
 
 def sponsor_details(request):
     return render(request, 'hacker/sponsor_details.html')
