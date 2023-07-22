@@ -7,3 +7,9 @@ from django.shortcuts import render
 def login(request):
     return render(request, 'login/login.html')
     
+
+def register(request):
+    return render(request, 'login/register.html')
+
+def land(request):
+    return render(request, 'login/land.html')

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{% block title %}Login{% endblock %}</title>
+        <title>{% block title %}HLM{% endblock %}</title>
         <!-- get bootstrap -->
         
     </head>
@@ -13,17 +13,7 @@
         
         <!-- messages -->
         
-        {% for message in messages %}
-        {% if message.tags == 'error' %}
-            <div class="alert alert-danger" role="alert" >
-                {{ message }}
-            </div>
-        {% else %}
-          <div class="alert alert-success" role="alert" >
-            {{ message }}
-          </div>
-        {% endif %}
-        {% endfor %}
+        
             
 
         {% block main %}

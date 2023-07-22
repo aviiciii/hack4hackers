@@ -1,45 +1,45 @@
-{% load static %}
+{% extends "login/layout.html" %}
+{% block head %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>{% block title %}Auctions{% endblock %}</title>
-        <!-- get bootstrap -->
-        {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> {% endcomment %}
-        <!-- MDB -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet"/>
-        <link href="{% static 'login/register.css' %}" rel="stylesheet">
-        <link rel="icon" href = "{% static 'auctions/favicon.png' %}">
-        <!-- google fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,300;0,400;0,500;1,200&display=swap" rel="stylesheet">
-    </head>
-    <body>
+{% endblock head %}
 
-{% block body %}
+{% block main %}
+
 <br>
 <div class="spacing">
     <div class="form_spacing">
-    <h2>Login</h2>
+    <h2>Register</h2>
     </div>
-    <form action="{% url 'login' %}" method="post" class="newlisting">
+    <form >
         {% csrf_token %}
         <br>
         <div class="form-group">
-            <input autofocus class="form-control" type="text" name="username" placeholder="Username">
+            <input autofocus class="form-control" type="text" name="username" placeholder="Team name">
         </div>
         <br>
         <div class="form-group">
-            <input class="form-control" type="password" name="password" placeholder="Password">
+            <input class="form-control" type="text" name="name" placeholder="Member 1 name">
         </div>
         <br>
-        <input class="btn btn-primary" type="submit" value="Login">
+        <div class="form-group">
+            <input class="form-control" type="text" name="name" placeholder="Member 2 name">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="name" placeholder="Member 3 name">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="name" placeholder="Member 4 name">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="email" placeholder="Lead's email">
+        </div>
+        <br>
+        
+        <input class="btn btn-primary" type="submit" value="Register">
     </form>
-    <div class="form_spacing">
-        Don't have an account? <a href="{% url 'register' %}">Register here.</a>
-    </div>
+
 </div>
-{% endblock %}
-</body>
-</html>
+{% endblock main %}
