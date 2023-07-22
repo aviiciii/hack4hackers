@@ -51,3 +51,39 @@ def hackathon_details(request):
         return render(request, 'organiser/hackathon_details.html')
 
     return render(request, 'organiser/hackathon_details.html')
+
+
+def sponsor_details(request):
+    
+    if request.method == 'POST':
+        form = request.POST
+
+        name = form['sponsor_name']
+        description = form['description']
+        website = form['website']
+        email = form['email']
+        phone = form['phone']
+        address = form['address']
+        logo = form['logo']
+
+        try:
+            sponsor = Sponsor.objects.get(id=1)
+            sponsor.name = name
+            sponsor.description = description
+            sponsor.website = website
+            sponsor.email = email
+            sponsor.phone = phone
+            sponsor.address = address
+            sponsor.logo = logo
+
+        except Sponsor.DoesNotExist:
+            sponsor = Sponsor(name=name, description=description, website=website, email=email, phone=phone, address=address, logo=logo)
+
+        sponsor.save()
+
+        messages.success(request, 'Sponsor details saved successfully!')
+        
+        return render(request, 'organiser/sponsor_details.html')
+
+
+    return render(request, 'organiser/sponsor_details.html')
