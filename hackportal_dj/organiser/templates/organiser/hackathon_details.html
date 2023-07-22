@@ -1,0 +1,61 @@
+{% extends 'organiser/layout.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<div class="spacing">
+    <div class="form_spacing">
+    <h2>Hackathon Details</h2>
+    </div>
+    <form action="{% url 'o_hackathon_details' %}" method="post" class="hackathon_details">
+        {% csrf_token %}
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="hackathon_name" placeholder="Hackathon Name">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="date" name="start_date" placeholder="Start date">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="date" name="end_date" placeholder="End date">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="venue" placeholder="Venue">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="number" name="duration" min="0" max="500" placeholder="Duration (in hrs)">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="theme" placeholder="Organiser">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="description" placeholder="Description">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="eligibility" placeholder="Eligibility">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="team_size" placeholder="Team Size">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="prizes" placeholder="Prizes">
+        </div>
+        <br>
+
+        <input class="btn btn-primary" type="submit" value="Update">
+    </form>
+    <div class="form_spacing">
+    </div>
+</div>
+
+{% endblock body %}
