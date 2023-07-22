@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'organiser/index.html')
+    return render(request, 'organiser/layout.html')
