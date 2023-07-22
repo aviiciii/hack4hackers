@@ -1,0 +1,33 @@
+{% extends 'organiser/layout.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<div class="spacing">
+    <div class="form_spacing">
+    <h2>Add Sponsor</h2>
+    </div>
+    <form action="{% url 'o_sponsor_details' %}" method="post" class="hackathon_details">
+        {% csrf_token %}
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="name" placeholder="Sponsor Name">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="url" name="website" placeholder="Website">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="date" name="description" placeholder="Description">
+        </div>
+        <br>
+
+        <input class="btn btn-primary" type="submit" value="Add">
+    </form>
+    <div class="form_spacing">
+    </div>
+</div>
+
+{% endblock body %}
