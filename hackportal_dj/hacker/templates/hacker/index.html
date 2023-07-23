@@ -5,22 +5,30 @@
     
 
     <div class="container">
-        <h1>Welcome back, {{username}}</h1>
         <br> <br>
+        <h1>Welcome back, {{hacker.team_name}}</h1>
+        <br>
         <div class="row">
             <div class="col-md-6">
-                <h2>Welcome hackers</h2>
-                
-
-                
-
-                    
-                    
+                <h2>Your Team</h2>
+                <ul>
+                    <li> <strong>Team Lead:</strong> {{hacker.lead_name}}</li>
+                    <li> <strong>Team Email:</strong> {{hacker.lead_email}}</li>
+                    <li> <strong>Member 1:</strong> {{hacker.member1_name}}</li>
+                    <li> <strong>Member 2:</strong> {{hacker.member2_name}}</li>
                 </ul>
             </div>
-            
         </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Hackathon Details</h2>
+            </div>
+
     </div>
+
+
 
 
 {% endblock body %}
