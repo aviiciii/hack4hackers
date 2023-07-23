@@ -5,7 +5,9 @@
     <div class="container">
       <div class="navbrand">
         <!-- Navbar brand -->
-        <img src="{% static 'hacker/img/logo1.jpg' %}" alt="logo"  width="180">
+        <a href = "{% url 'o_index' %}">
+          <img src="{% static 'hacker/img/logo1.jpg' %}" alt="logo"  width="180">
+        </a>
       </div>
       
       <!-- Toggle button -->
@@ -37,9 +39,9 @@
           <li class="nav-item">
               <a class="nav-link" href="{% url 'o_doubts' %}">Hacker Doubts</a>
           </li>
-          <li class="nav-item">
+          {% comment %} <li class="nav-item">
               <a class="nav-link" href="">Hackers</a>
-          </li>
+          </li> {% endcomment %}
           {% comment %} <li class="nav-item">
               <a class="nav-link" href="">Submissions</a>
           </li> {% endcomment %}

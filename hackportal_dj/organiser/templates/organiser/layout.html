@@ -17,6 +17,14 @@
 
     <!-- messages -->
         
+    <style>
+      .padding{
+        padding-top: 30px;
+        padding-left: 230px;
+        padding-right: 400px;
+      }
+    </style>
+
     {% for message in messages %}
     {% if message.tags == 'error' %}
         <div class="alert alert-danger" role="alert" >
@@ -28,10 +36,12 @@
       </div>
     {% endif %}
     {% endfor %}
+    <div class="padding">
+      {% block body %}
+      {% endblock body %}
+    </div>
     
-    {% block body %}
-    {% endblock body %}
-
+  
 
 
 </body>
