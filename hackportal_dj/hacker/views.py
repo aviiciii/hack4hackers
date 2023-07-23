@@ -1,8 +1,8 @@
 from django.shortcuts import render
 #i
 #from .models import Sponsor
-#from .models import Hackathon
-# Create your views here.
+from organiser.models import Hackathon, Sponsor
+from login.models import Hacker, Organiser
 
 def index(request):
     return render(request, 'hacker/index.html')
