@@ -1,0 +1,41 @@
+{% extends 'organiser/layout.html' %}
+
+
+{% block body %}
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Doubts Asked</h1>
+
+                {% if doubts %}
+                    
+                    <h2> Doubts </h2>
+                    <p>{% for doubt in doubts %}
+                        Question: {{ doubt.doubt }}
+                        {% if doubt.answer %}
+                            <br>
+                            Answer: {{ doubt.answer }}
+
+                        {% else %}
+                            <br>
+                            Answer: Not answered yet
+                        {% endif %}
+                        <br>
+                    {% endfor %}</p>
+
+                {% else %}
+                    <h2> No Doubts asked! </h2>
+
+                {% endif %}
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+{% endblock body %}
