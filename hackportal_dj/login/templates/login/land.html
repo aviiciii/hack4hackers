@@ -9,29 +9,29 @@
 
 {% block main %}
 <!-- hero section -->
-<div class="background-img" style="background: url('{% static 'login/img/bg6.jpg' %}')">
+<div class="background-img" style="background: url('{% static 'login/img/bg6.jpg' %}');">
     <section class="hero">
         <div class="container">
-            <div class="row">
+            <div class="row" style="margin-top: 160px;">
                 <!-- Text -->
                 <div class="col-md-6">
                     <div class="text">
-                       HackPortal <br><span class="alt-f3">by </span><span class="alt-f3">
-                        <a href="https://github.com/aviiciii">Laaveshwaran</a></span> <span class="alt-f3">&</span> 
+                       HackPortal <br><span class="alt-f3"> by &nbsp;</span><span class="alt-f3">
+                        <a href="https://github.com/aviiciii" style="text-decoration:none;">Laavesh</a></span> <span class="alt-f3">&</span> 
                         
-                        <span class="alt-f3"><a href="https://github.com/sasukexo"> Aswin</a></span>
+                        <span class="alt-f3"><a href="https://github.com/sasukexo" style="text-decoration:none;">Aswin</a></span>
                        
                     </div>
                     <div class="buttons ">
                         <a href="{% url 'login' %}" class="btn btn-primary me-3">Login</a>
-                        <a href="{% url 'register' %}" class="btn btn-outline-secondary">Hacker Register</a>
+                        <a href="{% url 'register' %}" class="btn btn-outline-secondary">Register for Hackers</a>
                     </div>
                 </div>
                 
                 
                 <!-- Image -->
                 <div class="col-md-6">
-                    <img src="{% static 'login/img/1.jpg' %}" alt="hero-img" class="w-100">
+                    <img src="{% static 'login/img/1.jpg' %}" alt="hero-img" class="w-100" style="border-radius:30px">
                 </div>
             </div>
         </div>
