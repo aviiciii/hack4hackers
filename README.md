@@ -19,7 +19,7 @@
 ### Attendee Management 
 - Organizers have the ability to view and modify the number of hackers attending the hackathon.
 
-### Installation and Setup
+## Installation and Setup
  
 - Clone the repository: git clone https://github.com/your-username/hackportal.git
 
@@ -43,7 +43,7 @@
 
 - Access the portal at http://127.0.0.1:8000/
 
-- Technologies Used
+## Technologies Used
 
 - Django: Web framework for backend development.
 
@@ -51,12 +51,11 @@
 
 - CockroachDB: Database for storing hackathon information and user data.
 
-### Contributing 
+## Contributing 
 - We welcome contributions to HackPortal! If you find any bugs or have ideas for new features, please feel free to open an issue or submit a pull request.
 
-### License 
-- This project is licensed under the MIT License - see the LICENSE file for details.
+## License 
+- This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### Acknowledgments\
-- We would like to thank all the contributors and the hackathon community for their support and feedback, which helped make this project a success. Happy hacking!
+
 
