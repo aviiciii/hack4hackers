@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.db import IntegrityError
 #import user
 from django.contrib.auth.models import User
-from .models import Hacker, Organiser
+
 
 # Create your views here.
 def register_view(request):

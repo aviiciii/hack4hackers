@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
@@ -7,6 +9,7 @@ from django.contrib import messages
 
 from login.models import Hacker, Organiser
 from organiser.models import Announcement, Sponsor, Hackathon
+
 
 def index(request):
     user = request.user
