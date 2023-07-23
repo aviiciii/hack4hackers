@@ -1,0 +1,34 @@
+{% extends 'organiser/layout.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<div class="spacing">
+    <div class="form_spacing">
+    <h2>Add an announcement</h2>
+    </div>
+    <form action="{% url 'o_announcement' %}" method="post" class="hackathon_details">
+        {% csrf_token %}
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="hackathon_name" placeholder="Title">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="start_date" placeholder="Description">
+        </div>
+        <br>
+        <div class="form-group">
+            <input class="form-control" type="text" name="end_date" placeholder="Category">
+        </div>
+        <br>
+        
+
+        <input class="btn btn-primary" type="submit" value="Update">
+    </form>
+    <div class="form_spacing">
+    </div>
+</div>
+
+{% endblock body %}
