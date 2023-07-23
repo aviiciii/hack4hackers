@@ -22,26 +22,28 @@
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse" id="navbarButtonsExample">
         <!-- Left links -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'o_announcement' %}">Announcements</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="">Questions</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="">Hackers</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="">Submissions</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'o_sponsor_details' %}">Sponsors</a>
-            </li>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left:20px;">
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'o_hackathon_details' %}">Hackathon</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'o_announcement' %}">Announcements</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'o_sponsor_details' %}">Sponsors</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="">Questions</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="">Hackers</a>
+          </li>
+          {% comment %} <li class="nav-item">
+              <a class="nav-link" href="">Submissions</a>
+          </li> {% endcomment %}
+          
 
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'o_hackathon_details' %}">Edit Hackathon</a>
-            </li>
+            
         </ul>
         
         <!-- Right links -->
