@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import Hackathon, Sponsor, Announcement
 from login.models import Hacker, Organiser
+from django.contrib.auth.models import User
+
+from hacker.models import Doubt
 
 
 # import messages
@@ -13,7 +16,7 @@ from hacker.models import Doubt
 
 
 def index(request):
-
+    user = request.user
     # get all hackers
     count_hackers = len(Hacker.objects.all()) * 3
 
@@ -21,10 +24,14 @@ def index(request):
 
     count_announcements = len(Announcement.objects.all())
 
+    count_unanswered_doubts = len(Doubt.objects.filter(answer=''))
+
     context={
+        'username': user.username,
         'count_hackers': count_hackers,
         'count_organisers': count_organisers,
         'count_announcements': count_announcements,
+        'count_unanswered_doubts': count_unanswered_doubts,
     }
 
     return render(request, 'organiser/index.html', context=context)
