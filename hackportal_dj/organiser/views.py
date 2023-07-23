@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Hackathon, Sponsor, Announcement
+from login.models import Hacker, Organiser
+
 
 # import messages
 from django.contrib import messages
@@ -11,7 +13,21 @@ from datetime import datetime
 
 
 def index(request):
-    return render(request, 'organiser/index.html')
+
+    # get all hackers
+    count_hackers = len(Hacker.objects.all()) * 3
+
+    count_organisers = len(Organiser.objects.all())
+
+    count_announcements = len(Announcement.objects.all())
+
+    context={
+        'count_hackers': count_hackers,
+        'count_organisers': count_organisers,
+        'count_announcements': count_announcements,
+    }
+
+    return render(request, 'organiser/index.html', context=context)
 
 
 def hackathon_details(request):
