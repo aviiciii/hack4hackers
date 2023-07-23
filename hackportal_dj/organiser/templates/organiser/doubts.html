@@ -13,6 +13,7 @@
                     
                     <h2> Doubts </h2>
                     <p>{% for doubt in doubts %}
+                        Team Name: {{ doubt.team_name }} <br>
                         Question: {{ doubt.doubt }}
                         {% if doubt.answer %}
                             <br>

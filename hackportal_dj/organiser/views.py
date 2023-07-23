@@ -8,7 +8,7 @@ from django.contrib import messages
 
 # import datetime
 from datetime import datetime
-
+from hacker.models import Doubt
 # Create your views here.
 
 
@@ -93,7 +93,6 @@ def sponsor_details(request):
     return render(request, 'organiser/sponsor_details.html')
 
 
-
 def announcement(request):
 
     if request.method=='POST':
@@ -114,3 +113,15 @@ def announcement(request):
         return render(request, 'organiser/announcement.html')
 
     return render(request, 'organiser/announcement.html')
+
+
+def doubts(request):
+    hacker_doubts = Doubt.objects.all()
+    context = {
+        'doubts': hacker_doubts,
+    }
+
+
+    return render(request, 'organiser/doubts.html', context=context)
+
+
