@@ -47,4 +47,21 @@ def announcement(request):
         'announcements': announcements,
     }
     return render(request, 'hacker/announcement.html', context)
+
+
+def sponsor(request):
+    user = request.user
+    try:
+        hacker = Hacker.objects.get(team_name=user)
+    except:
+        messages.error(request, 'You are not a hacker. Login as hacker!')
+        return redirect('login')
+
+    sponsors = Sponsor.objects.all()
+    context = {
+        'hacker': hacker,
+        'sponsors': sponsors,
+    }
+    return render(request, 'hacker/sponsor.html', context)
+
         
