@@ -30,24 +30,27 @@
                     </form>
                 </div>
 
-                <br>
                 
+                
+                <div class="doubts" style="margin-top: 40px;">
+                    {% if doubts %}
+                    
+                        <h2> Your Doubts </h2>
+                        <p>{% for doubt in doubts %}
+                            Question: {{ doubt.doubt }}
+                            {% if doubt.answer %}
+                                <br>
+                                Answer: {{ doubt.answer }}
 
-                {% if doubts %}
-                    <h2> Your Doubts </h2>
-                    <p>{% for doubt in doubts %}
-                        Question: {{ doubt.doubt }}
-                        {% if doubt.answer %}
+                            {% else %}
+                                <br>
+                                Answer: Not answered yet
+                            {% endif %}
                             <br>
-                            Answer: {{ doubt.answer }}
-
-                        {% else %}
-                            <br>
-                            Answer: Not answered yet
-                        {% endif %}
-                        <br>
-                    {% endfor %}</p>
-                {% endif %}
+                        {% endfor %}</p>
+                    {% endif %}
+                </div>
+                
                 
 
             </div>
