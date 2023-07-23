@@ -7,12 +7,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <br> <br>
                 <h1 class="text-center">Announcements</h1>
+                <br> <br>
 
                 {% for announcement in announcements %}
                     {{ announcement.title }} <br>
                     {{ announcement.description }} <br>
                     {{ announcement.date }} <br>
+                    <br> <br>
+
                 {% endfor %}
             </div>
         </div>
