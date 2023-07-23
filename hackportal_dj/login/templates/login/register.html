@@ -1,11 +1,14 @@
 {% extends "login/layout.html" %}
+{% load static %}
 {% block head %}
 
 {% endblock head %}
 
 {% block main %}
+<link rel="stylesheet" href="{% static 'login/register.css' %}">
 
 <br>
+<div class="box-container">
 <div class="spacing">
     <div class="form_spacing">
     <h2>Register</h2>
@@ -40,6 +43,7 @@
         
         <input class="btn btn-primary" type="submit" value="Register">
     </form>
+</div>
 
 </div>
 {% endblock main %}
