@@ -1,0 +1,62 @@
+{% extends 'Hacker/layout.html' %}
+
+
+{% block body %}
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <br>
+                <h1 class="text-center">Doubts</h1>
+
+                <div class="form_spacing">
+                    <h2>Ask a doubt</h2>
+                    </div>
+                    <form action="{% url 'h_doubt' %}" method="post" class="hackathon_details">
+                        {% csrf_token %}
+                        <br>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="doubt" placeholder="Question">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="recipient" placeholder="Whom do you want to ask? (Organiser/Sponsor)">
+                        </div>
+                        <br>
+                        
+                
+                        <input class="btn btn-primary" type="submit" value="Ask">
+                    </form>
+                </div>
+
+                <br>
+                
+
+                {% if doubts %}
+                    <h2> Your Doubts </h2>
+                    <p>{% for doubt in doubts %}
+                        Question: {{ doubt.doubt }}
+                        {% if doubt.answer %}
+                            <br>
+                            Answer: {{ doubt.answer }}
+
+                        {% else %}
+                            <br>
+                            Answer: Not answered yet
+                        {% endif %}
+                        <br>
+                    {% endfor %}</p>
+                {% endif %}
+                
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+{% endblock body %}

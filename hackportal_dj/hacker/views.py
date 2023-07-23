@@ -7,6 +7,7 @@ from django.shortcuts import redirect
 # messages
 from django.contrib import messages
 
+from .models import Doubt
 from login.models import Hacker, Organiser
 from organiser.models import Announcement, Sponsor, Hackathon
 
@@ -68,3 +69,37 @@ def sponsor(request):
     return render(request, 'hacker/sponsor.html', context)
 
         
+def doubt(request):
+
+    if request.method == 'POST':
+        doubt = request.POST.get('doubt')
+        recipient = request.POST.get('recipient')
+        user = request.user
+        try:
+            hacker = Hacker.objects.get(team_name=user)
+        except:
+            messages.error(request, 'You are not a hacker. Login as hacker!')
+            return redirect('login')
+
+        doubt = Doubt(team_name=user, doubt=doubt, recipient=recipient)
+        doubt.save()
+        messages.success(request, 'Doubt sent successfully!')
+        return redirect('h_doubt')
+
+
+
+
+    user = request.user
+    try:
+        hacker = Hacker.objects.get(team_name=user)
+    except:
+        messages.error(request, 'You are not a hacker. Login as hacker!')
+        return redirect('login')
+    
+    doubts = Doubt.objects.filter(team_name=user)
+
+    context = {
+        'hacker': hacker,
+        'doubts': doubts,
+    }
+    return render(request, 'hacker/doubt.html', context)
