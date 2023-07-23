@@ -1,14 +1,33 @@
 from django.shortcuts import render
-from .models import Hackathon, Sponsor
+from .models import Hackathon, Sponsor, Announcement
+from login.models import Hacker, Organiser
+
 
 # import messages
 from django.contrib import messages
+
+# import datetime
+from datetime import datetime
 
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'organiser/index.html')
+
+    # get all hackers
+    count_hackers = len(Hacker.objects.all()) * 3
+
+    count_organisers = len(Organiser.objects.all())
+
+    count_announcements = len(Announcement.objects.all())
+
+    context={
+        'count_hackers': count_hackers,
+        'count_organisers': count_organisers,
+        'count_announcements': count_announcements,
+    }
+
+    return render(request, 'organiser/index.html', context=context)
 
 
 def hackathon_details(request):
@@ -72,3 +91,26 @@ def sponsor_details(request):
 
 
     return render(request, 'organiser/sponsor_details.html')
+
+
+
+def announcement(request):
+
+    if request.method=='POST':
+        form = request.POST
+
+        title = form['title']
+        description = form['description']
+        category = form['category']
+
+        try:
+            announcement = Announcement(title=title, description=description, category=category, date=datetime.now())
+            announcement.save()
+        except:
+            messages.error(request, 'Error in adding announcement!')
+        else:   
+            messages.success(request, 'Announcement added successfully!')
+        
+        return render(request, 'organiser/announcement.html')
+
+    return render(request, 'organiser/announcement.html')

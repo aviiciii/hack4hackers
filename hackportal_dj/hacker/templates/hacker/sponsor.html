@@ -1,0 +1,26 @@
+{% extends 'Hacker/layout.html' %}
+
+
+{% block body %}
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Sponsors</h1>
+
+                {% for sponsor in sponsors %}
+                    {{ sponsor.name }} <br>
+                    Website: <a href="{{ sponsor.website }}">{{ sponsor.website }}</a><br>
+                    {{ sponsor.description }} <br>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+{% endblock body %}
