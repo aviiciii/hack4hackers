@@ -72,3 +72,20 @@ def sponsor_details(request):
 
 
     return render(request, 'organiser/sponsor_details.html')
+
+
+
+def announcement(request):
+
+    if request.method=='POST':
+        form = request.POST
+
+        title = form['title']
+        description = form['description']
+        category = form['category']
+
+        messages.success(request, 'Announcement added successfully!')
+        
+        return render(request, 'organiser/announcement.html')
+
+    return render(request, 'organiser/announcement.html')
