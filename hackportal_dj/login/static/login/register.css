@@ -17,13 +17,16 @@ body {
     padding: 30px;
     max-width: 500px;
     width: 100%;
-    transform: translateY(-100%); /* Initially, move the form outside the viewport */
-    animation: slideInFromTop 1s ease-out forwards; /* Make the animation slower */
+    transform: translateY(-100%);
+    animation: slideInFromTop 1s ease-out forwards;
+    display: flex; /* Use flexbox to center the form vertically */
+    flex-direction: column; /* Align children elements in a column */
+    align-items: center; /* Center children elements horizontally */
 }
 
 @keyframes slideInFromTop {
     to {
-        transform: translateY(0); /* Slide the form in from the top */
+        transform: translateY(0);
     }
 }
 
