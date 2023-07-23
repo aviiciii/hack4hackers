@@ -18,12 +18,12 @@ def index(request):
     if user.is_authenticated and hacker:
         announcements = Announcement.objects.all()
         sponsors = Sponsor.objects.all()
-        hackathons = Hackathon.objects.all()
+        hackathon = Hackathon.objects.get(id=1)
         context = {
             'hacker': hacker,
             'announcements': announcements,
             'sponsors': sponsors,
-            'hackathons': hackathons,
+            'hackathon': hackathon,
         }
         return render(request, 'hacker/index.html', context)
         
