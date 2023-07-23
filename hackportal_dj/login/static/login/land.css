@@ -29,6 +29,8 @@ Fonts setup
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--body);
+    background: url("/static/login/img/bg.jpeg")
+
 }
 
 /* ------------------------------------------------------------ 
