@@ -1,8 +1,8 @@
-***HackPortal - Hackathon Management Portal***
+# HackPortal - Hackathon Management Portal
 
 ***HackPortal*** is a web application built for managing hackathons, providing a platform for both hackers and organizers. This portal allows ***hackers*** to *register for the hackathon, access information about the event, view sponsors, announcements, and submit queries* to the organizers. ***Organizers*** have *superuser privileges*, enabling them to *manage the number of attendees, make announcements, and respond to hacker queries*.
 
-***Features***
+## Features
 
 
 *Hacker Login and Registration:*
