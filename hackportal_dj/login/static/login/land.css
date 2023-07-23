@@ -284,3 +284,7 @@ Responsive section
 .login{
     margin-right: 50px;
 }
+
+.background-img{
+    height: 100vh;
+}
