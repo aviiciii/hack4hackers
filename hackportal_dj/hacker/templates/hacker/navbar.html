@@ -1,3 +1,11 @@
+
+{% extends 'hacker/layout.html' %}
+{% load static %}
+{% block head %}
+{% endblock head %}
+
+
+{% block main %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- Container wrapper -->
     <div class="container">
@@ -21,6 +29,7 @@
   
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse" id="navbarButtonsExample">
+        <img src="{% static 'hacker/img/logo.jpg' %}" alt="hero-img" class="w-100">
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
@@ -58,3 +67,6 @@
     <!-- Container wrapper -->
   </nav>
   <!-- Navbar -->
+
+
+  {% endblock main %}
