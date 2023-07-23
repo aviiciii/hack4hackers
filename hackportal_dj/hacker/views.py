@@ -32,8 +32,19 @@ def index(request):
 
 
 
-#def sponsor_details(request):
-    return render(request, 'hacker/sponsor_details.html')
+def announcement(request):
+    user = request.user
+    try:
+        hacker = Hacker.objects.get(team_name=user)
+    except:
+        messages.error(request, 'You are not a hacker. Login as hacker!')
+        return redirect('login')
 
-#def team_details(request):
-    return render(request, 'hacker/team_details.html')
+    announcements = Announcement.objects.all()
+    print(announcements)
+    context = {
+        'hacker': hacker,
+        'announcements': announcements,
+    }
+    return render(request, 'hacker/announcement.html', context)
+        
