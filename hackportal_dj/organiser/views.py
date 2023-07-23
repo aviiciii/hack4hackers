@@ -1,8 +1,11 @@
 from django.shortcuts import render
-from .models import Hackathon, Sponsor
+from .models import Hackathon, Sponsor, Announcement
 
 # import messages
 from django.contrib import messages
+
+# import datetime
+from datetime import datetime
 
 # Create your views here.
 
@@ -84,7 +87,13 @@ def announcement(request):
         description = form['description']
         category = form['category']
 
-        messages.success(request, 'Announcement added successfully!')
+        try:
+            announcement = Announcement(title=title, description=description, category=category, date=datetime.now())
+            announcement.save()
+        except:
+            messages.error(request, 'Error in adding announcement!')
+        else:   
+            messages.success(request, 'Announcement added successfully!')
         
         return render(request, 'organiser/announcement.html')
 

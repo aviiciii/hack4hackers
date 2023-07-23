@@ -2,7 +2,9 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Hackathon, Sponsor
+from . import models
 
-admin.site.register(Hackathon)
-admin.site.register(Sponsor)
+admin.site.register(models.Hackathon)
+admin.site.register(models.Sponsor)
+
+admin.site.register(models.Announcement)
