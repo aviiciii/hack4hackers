@@ -8,6 +8,8 @@ from django.db import IntegrityError
 #import user
 from django.contrib.auth.models import User
 
+from .models import Hacker
+
 
 # Create your views here.
 def register_view(request):

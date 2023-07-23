@@ -15,8 +15,9 @@ from organiser.models import Announcement, Sponsor, Hackathon
 def index(request):
     user = request.user
     try:
-        hacker = Hacker.objects.get(team_name=user)
-    except:
+        hacker = Hacker.objects.get(team_name=user.username)
+    except Exception as e:
+        print(e)
         messages.error(request, 'You are not a hacker. Login as hacker!')
         return redirect('login')
     if user.is_authenticated and hacker:
